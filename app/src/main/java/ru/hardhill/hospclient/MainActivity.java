@@ -45,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
     RelativeLayout pnlLogin;
     LinearLayout pnlInfouser;
     private String response;
+
+
     // === перехватывает сообщения от другого процесса
     public Handler handler = new Handler(new Handler.Callback() {
 
@@ -53,7 +55,9 @@ public class MainActivity extends AppCompatActivity {
             switch (msg.what) {
 
                 case 0:
+                    pnlInfouser.setVisibility(View.VISIBLE);
                     lblUserInfo.setText(response);
+                    pnlLogin.setVisibility(View.GONE);
                     break;
             }
             return false;
@@ -88,14 +92,12 @@ public class MainActivity extends AppCompatActivity {
                 patient.Name = USERNAME;
                 patient.Surname = SURENAME;
                 patient.Birthday = MyUtil.String2Date(BIRTHDAY);
-                pnlLogin.setVisibility(View.GONE);
-                pnlInfouser.setVisibility(View.VISIBLE);
-                //GetCheckPatient(patient, IDLPU, GUID, 0);
+                GetCheckPatient(patient, IDLPU, GUID, 0);
             }
         });
     }
 
-    private final void GetCheckPatient(final CFTPatient patient,final int idLPU,final String guid,final int idHistory) {
+    private void GetCheckPatient(final CFTPatient patient, final int idLPU, final String guid, final int idHistory) {
         new Thread(new Runnable() {
 
             @Override
