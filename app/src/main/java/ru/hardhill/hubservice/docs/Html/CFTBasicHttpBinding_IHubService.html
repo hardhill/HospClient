@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>CFTBasicHttpBinding_IHubService class</title>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/github.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel='stylesheet' type='text/css' href='../Styles/Blueprint_Styles/Style.css' />
+    <script src='../Scripts/Blueprint_Scripts/Script.js' type='text/javascript'></script>
+</head>
+    <body>
+        <h2>CFTBasicHttpBinding_IHubService </h2>
+        
+        <p><strong>SOAP Version: 1.1</strong></p>
+        <p>Main class which you can use to connect to your web service</p>
+        
+        <h3>Important settings</h3>
+        <ul>
+            <li>Timeout - the timeout for network operations, in milliseconds. By default: 60 sec.
+                <br />
+                Example:<br />
+                <pre >
+                    <code class="java">
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(null,"http://92.124.194.86:8686/hubservice",30000);
+service.CheckPatient();
+                    </code>
+        
+</pre>
+            </li>
+            <li>Url - the web service address. By default it is retrieved from the wsdl file
+                <br />
+                Example:<br />
+                <pre >
+                    <code class="java">
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(null,"http://92.124.194.86:8686/hubservice");
+service.CheckPatient();
+                    </code>
+        
+</pre>
+            </li>
+            <li>httpHeaders - allows you to add custom headers to the http requests.
+                <br/>
+                Example:<br/>
+                <pre >
+                    <code class="java">
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService();
+service.httpHeaders.add( new HeaderProperty("Authorization","Basic QWxhZGRpbjpPcGVuU2VzYW1l"));
+service.CheckPatient();
+                    </code>
+</pre>
+
+            </li>
+            <li>
+                Enable logging - if you enable logging, all requests/responses will be write to the console (for debugging purposes)
+                <br />
+                Example:<br />
+                <pre >
+                    <code class="java">
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService();
+service.enableLogging=true;
+service.CheckPatient();
+                    </code>
+</pre>
+            </li>
+            
+        </ul>
+        
+        <h3>Methods</h3>
+        <ul>
+                <li><a href="CFTBasicHttpBinding_IHubService_methods.html#CheckPatient">CheckPatient</a></li>
+                <li><a href="CFTBasicHttpBinding_IHubService_methods.html#SearchTop10Patient">SearchTop10Patient</a></li>
+                <li><a href="CFTBasicHttpBinding_IHubService_methods.html#AddNewPatient">AddNewPatient</a></li>
+                <li><a href="CFTBasicHttpBinding_IHubService_methods.html#GetDocListFullTree">GetDocListFullTree</a></li>
+                <li><a href="CFTBasicHttpBinding_IHubService_methods.html#InspectDoctorsReferal">InspectDoctorsReferal</a></li>
+                <li><a href="CFTBasicHttpBinding_IHubService_methods.html#GetAppointmentsDemandDoctorsReferal">GetAppointmentsDemandDoctorsReferal</a></li>
+                <li><a href="CFTBasicHttpBinding_IHubService_methods.html#GetAvaibleAppointments">GetAvaibleAppointments</a></li>
+                <li><a href="CFTBasicHttpBinding_IHubService_methods.html#SetAppointment">SetAppointment</a></li>
+                <li><a href="CFTBasicHttpBinding_IHubService_methods.html#GetAvailableDates">GetAvailableDates</a></li>
+                <li><a href="CFTBasicHttpBinding_IHubService_methods.html#GetDoctorList">GetDoctorList</a></li>
+                <li><a href="CFTBasicHttpBinding_IHubService_methods.html#GetLPUList">GetLPUList</a></li>
+                <li><a href="CFTBasicHttpBinding_IHubService_methods.html#GetOrgList">GetOrgList</a></li>
+                <li><a href="CFTBasicHttpBinding_IHubService_methods.html#GetSpesialityList">GetSpesialityList</a></li>
+                <li><a href="CFTBasicHttpBinding_IHubService_methods.html#GetLpuToRFSZIList">GetLpuToRFSZIList</a></li>
+                <li><a href="CFTBasicHttpBinding_IHubService_methods.html#GetDistrictList">GetDistrictList</a></li>
+                <li><a href="CFTBasicHttpBinding_IHubService_methods.html#GetWorkingTime">GetWorkingTime</a></li>
+                <li><a href="CFTBasicHttpBinding_IHubService_methods.html#GetFullInfoById">GetFullInfoById</a></li>
+                <li><a href="CFTBasicHttpBinding_IHubService_methods.html#CreateClaimForRefusal">CreateClaimForRefusal</a></li>
+                <li><a href="CFTBasicHttpBinding_IHubService_methods.html#GetPatientHistory">GetPatientHistory</a></li>
+                <li><a href="CFTBasicHttpBinding_IHubService_methods.html#UpdatePhoneByIdPat">UpdatePhoneByIdPat</a></li>
+                <li><a href="CFTBasicHttpBinding_IHubService_methods.html#GetHubUserByGuid">GetHubUserByGuid</a></li>
+                <li><a href="CFTBasicHttpBinding_IHubService_methods.html#GetErrorList">GetErrorList</a></li>
+                <li><a href="CFTBasicHttpBinding_IHubService_methods.html#SetWaitingList">SetWaitingList</a></li>
+                <li><a href="CFTBasicHttpBinding_IHubService_methods.html#GetStatusAnalysis">GetStatusAnalysis</a></li>
+                <li><a href="CFTBasicHttpBinding_IHubService_methods.html#SendNotificationAboutAppointment">SendNotificationAboutAppointment</a></li>
+                <li><a href="CFTBasicHttpBinding_IHubService_methods.html#SendNotificationAboutAppointmentStatus">SendNotificationAboutAppointmentStatus</a></li>
+                <li><a href="CFTBasicHttpBinding_IHubService_methods.html#GetTodayAppointments">GetTodayAppointments</a></li>
+                <li><a href="CFTBasicHttpBinding_IHubService_methods.html#CheckIn">CheckIn</a></li>
+                <li><a href="CFTBasicHttpBinding_IHubService_methods.html#GetVersion">GetVersion</a></li>
+        </ul>
+    </body>
+</html>
+

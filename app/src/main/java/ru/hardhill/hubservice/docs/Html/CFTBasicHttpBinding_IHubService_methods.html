@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>CFTBasicHttpBinding_IHubService methods</title>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/github.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel='stylesheet' type='text/css' href='../Styles/Blueprint_Styles/Style.css' />
+    <script src='../Scripts/Blueprint_Scripts/Script.js' type='text/javascript'></script>
+    <style type="text/css">
+        .syntaxhighlighter {
+            overflow-y: hidden !important;
+            overflow-x: auto !important;
+        }
+    </style>
+</head>
+<body>
+        <h2 id="CheckPatient">CheckPatient</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import ru.hardhill.hubservice;
+...
+
+CFTPatient param0 = new CFTPatient();
+Integer param1 = ...;//initialization code
+String param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+
+            
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService("http://92.124.194.86:8686/hubservice");
+CFTCheckPatientResult res = service.CheckPatient(param0,param1,param2,param3);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import ru.hardhill.hubservice;
+...
+CFTPatient param0 = new CFTPatient();
+Integer param1 = ...;//initialization code
+String param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        CFTCheckPatientResult res = (CFTCheckPatientResult)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://92.124.194.86:8686/hubservice");
+service.CheckPatientAsync (param0,param1,param2,param3);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SearchTop10Patient">SearchTop10Patient</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import ru.hardhill.hubservice;
+...
+
+CFTPatient param0 = new CFTPatient();
+Integer param1 = ...;//initialization code
+String param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+
+            
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService("http://92.124.194.86:8686/hubservice");
+CFTSearchTop10PatientResult res = service.SearchTop10Patient(param0,param1,param2,param3);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import ru.hardhill.hubservice;
+...
+CFTPatient param0 = new CFTPatient();
+Integer param1 = ...;//initialization code
+String param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        CFTSearchTop10PatientResult res = (CFTSearchTop10PatientResult)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://92.124.194.86:8686/hubservice");
+service.SearchTop10PatientAsync (param0,param1,param2,param3);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="AddNewPatient">AddNewPatient</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import ru.hardhill.hubservice;
+...
+
+CFTPatient param0 = new CFTPatient();
+Integer param1 = ...;//initialization code
+String param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+
+            
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService("http://92.124.194.86:8686/hubservice");
+CFTAddNewPatientResult res = service.AddNewPatient(param0,param1,param2,param3);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import ru.hardhill.hubservice;
+...
+CFTPatient param0 = new CFTPatient();
+Integer param1 = ...;//initialization code
+String param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        CFTAddNewPatientResult res = (CFTAddNewPatientResult)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://92.124.194.86:8686/hubservice");
+service.AddNewPatientAsync (param0,param1,param2,param3);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetDocListFullTree">GetDocListFullTree</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import ru.hardhill.hubservice;
+...
+
+Integer param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+
+            
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService("http://92.124.194.86:8686/hubservice");
+CFTGetDocListFullTreeResult res = service.GetDocListFullTree(param0,param1,param2,param3);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import ru.hardhill.hubservice;
+...
+Integer param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        CFTGetDocListFullTreeResult res = (CFTGetDocListFullTreeResult)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://92.124.194.86:8686/hubservice");
+service.GetDocListFullTreeAsync (param0,param1,param2,param3);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="InspectDoctorsReferal">InspectDoctorsReferal</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import ru.hardhill.hubservice;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+
+            
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService("http://92.124.194.86:8686/hubservice");
+CFTInspectDoctorsReferalResult res = service.InspectDoctorsReferal(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import ru.hardhill.hubservice;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        CFTInspectDoctorsReferalResult res = (CFTInspectDoctorsReferalResult)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://92.124.194.86:8686/hubservice");
+service.InspectDoctorsReferalAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetAppointmentsDemandDoctorsReferal">GetAppointmentsDemandDoctorsReferal</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import ru.hardhill.hubservice;
+...
+
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+String param2 = ...;//initialization code
+CFTEnums.AppointmentType param3 = AppointmentType.отсутстствует_неопределено;
+java.util.Date param4 = ...;//initialization code
+java.util.Date param5 = ...;//initialization code
+String param6 = ...;//initialization code
+Integer param7 = ...;//initialization code
+
+            
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService("http://92.124.194.86:8686/hubservice");
+CFTGetAvaibleAppointmentsResult res = service.GetAppointmentsDemandDoctorsReferal(param0,param1,param2,param3,param4,param5,param6,param7);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import ru.hardhill.hubservice;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+String param2 = ...;//initialization code
+CFTEnums.AppointmentType param3 = AppointmentType.отсутстствует_неопределено;
+java.util.Date param4 = ...;//initialization code
+java.util.Date param5 = ...;//initialization code
+String param6 = ...;//initialization code
+Integer param7 = ...;//initialization code
+
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        CFTGetAvaibleAppointmentsResult res = (CFTGetAvaibleAppointmentsResult)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://92.124.194.86:8686/hubservice");
+service.GetAppointmentsDemandDoctorsReferalAsync (param0,param1,param2,param3,param4,param5,param6,param7);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetAvaibleAppointments">GetAvaibleAppointments</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import ru.hardhill.hubservice;
+...
+
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+String param2 = ...;//initialization code
+java.util.Date param3 = ...;//initialization code
+java.util.Date param4 = ...;//initialization code
+String param5 = ...;//initialization code
+Integer param6 = ...;//initialization code
+
+            
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService("http://92.124.194.86:8686/hubservice");
+CFTGetAvaibleAppointmentsResult res = service.GetAvaibleAppointments(param0,param1,param2,param3,param4,param5,param6);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import ru.hardhill.hubservice;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+String param2 = ...;//initialization code
+java.util.Date param3 = ...;//initialization code
+java.util.Date param4 = ...;//initialization code
+String param5 = ...;//initialization code
+Integer param6 = ...;//initialization code
+
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        CFTGetAvaibleAppointmentsResult res = (CFTGetAvaibleAppointmentsResult)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://92.124.194.86:8686/hubservice");
+service.GetAvaibleAppointmentsAsync (param0,param1,param2,param3,param4,param5,param6);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SetAppointment">SetAppointment</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import ru.hardhill.hubservice;
+...
+
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+String param4 = ...;//initialization code
+Integer param5 = ...;//initialization code
+
+            
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService("http://92.124.194.86:8686/hubservice");
+CFTSetAppointmentResult res = service.SetAppointment(param0,param1,param2,param3,param4,param5);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import ru.hardhill.hubservice;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+String param4 = ...;//initialization code
+Integer param5 = ...;//initialization code
+
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        CFTSetAppointmentResult res = (CFTSetAppointmentResult)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://92.124.194.86:8686/hubservice");
+service.SetAppointmentAsync (param0,param1,param2,param3,param4,param5);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetAvailableDates">GetAvailableDates</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import ru.hardhill.hubservice;
+...
+
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+String param2 = ...;//initialization code
+java.util.Date param3 = ...;//initialization code
+java.util.Date param4 = ...;//initialization code
+String param5 = ...;//initialization code
+Integer param6 = ...;//initialization code
+
+            
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService("http://92.124.194.86:8686/hubservice");
+CFTGetAvailableDatesResult res = service.GetAvailableDates(param0,param1,param2,param3,param4,param5,param6);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import ru.hardhill.hubservice;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+String param2 = ...;//initialization code
+java.util.Date param3 = ...;//initialization code
+java.util.Date param4 = ...;//initialization code
+String param5 = ...;//initialization code
+Integer param6 = ...;//initialization code
+
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        CFTGetAvailableDatesResult res = (CFTGetAvailableDatesResult)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://92.124.194.86:8686/hubservice");
+service.GetAvailableDatesAsync (param0,param1,param2,param3,param4,param5,param6);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetDoctorList">GetDoctorList</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import ru.hardhill.hubservice;
+...
+
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+Integer param4 = ...;//initialization code
+
+            
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService("http://92.124.194.86:8686/hubservice");
+CFTGetDoctorListResult res = service.GetDoctorList(param0,param1,param2,param3,param4);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import ru.hardhill.hubservice;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+Integer param4 = ...;//initialization code
+
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        CFTGetDoctorListResult res = (CFTGetDoctorListResult)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://92.124.194.86:8686/hubservice");
+service.GetDoctorListAsync (param0,param1,param2,param3,param4);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetLPUList">GetLPUList</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import ru.hardhill.hubservice;
+...
+
+Integer param0 = ...;//initialization code
+String param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+
+            
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService("http://92.124.194.86:8686/hubservice");
+CFTGetLPUListResult res = service.GetLPUList(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import ru.hardhill.hubservice;
+...
+Integer param0 = ...;//initialization code
+String param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        CFTGetLPUListResult res = (CFTGetLPUListResult)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://92.124.194.86:8686/hubservice");
+service.GetLPUListAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetOrgList">GetOrgList</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import ru.hardhill.hubservice;
+...
+
+Integer param0 = ...;//initialization code
+String param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+
+            
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService("http://92.124.194.86:8686/hubservice");
+CFTGetOrgListResult res = service.GetOrgList(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import ru.hardhill.hubservice;
+...
+Integer param0 = ...;//initialization code
+String param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        CFTGetOrgListResult res = (CFTGetOrgListResult)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://92.124.194.86:8686/hubservice");
+service.GetOrgListAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetSpesialityList">GetSpesialityList</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import ru.hardhill.hubservice;
+...
+
+Integer param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+
+            
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService("http://92.124.194.86:8686/hubservice");
+CFTGetSpesialityListResult res = service.GetSpesialityList(param0,param1,param2,param3);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import ru.hardhill.hubservice;
+...
+Integer param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        CFTGetSpesialityListResult res = (CFTGetSpesialityListResult)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://92.124.194.86:8686/hubservice");
+service.GetSpesialityListAsync (param0,param1,param2,param3);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetLpuToRFSZIList">GetLpuToRFSZIList</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import ru.hardhill.hubservice;
+...
+
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+
+            
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService("http://92.124.194.86:8686/hubservice");
+CFTArrayOfLpuListToRFISZ res = service.GetLpuToRFSZIList(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import ru.hardhill.hubservice;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        CFTArrayOfLpuListToRFISZ res = (CFTArrayOfLpuListToRFISZ)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://92.124.194.86:8686/hubservice");
+service.GetLpuToRFSZIListAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetDistrictList">GetDistrictList</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import ru.hardhill.hubservice;
+...
+
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+
+            
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService("http://92.124.194.86:8686/hubservice");
+CFTArrayOfDistrict res = service.GetDistrictList(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import ru.hardhill.hubservice;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        CFTArrayOfDistrict res = (CFTArrayOfDistrict)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://92.124.194.86:8686/hubservice");
+service.GetDistrictListAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetWorkingTime">GetWorkingTime</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import ru.hardhill.hubservice;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+String param4 = ...;//initialization code
+String param5 = ...;//initialization code
+
+            
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService("http://92.124.194.86:8686/hubservice");
+String res = service.GetWorkingTime(param0,param1,param2,param3,param4,param5);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import ru.hardhill.hubservice;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+String param4 = ...;//initialization code
+String param5 = ...;//initialization code
+
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://92.124.194.86:8686/hubservice");
+service.GetWorkingTimeAsync (param0,param1,param2,param3,param4,param5);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetFullInfoById">GetFullInfoById</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import ru.hardhill.hubservice;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+String param4 = ...;//initialization code
+
+            
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService("http://92.124.194.86:8686/hubservice");
+String res = service.GetFullInfoById(param0,param1,param2,param3,param4);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import ru.hardhill.hubservice;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+String param4 = ...;//initialization code
+
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://92.124.194.86:8686/hubservice");
+service.GetFullInfoByIdAsync (param0,param1,param2,param3,param4);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="CreateClaimForRefusal">CreateClaimForRefusal</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import ru.hardhill.hubservice;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+String param4 = ...;//initialization code
+
+            
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService("http://92.124.194.86:8686/hubservice");
+String res = service.CreateClaimForRefusal(param0,param1,param2,param3,param4);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import ru.hardhill.hubservice;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+String param4 = ...;//initialization code
+
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://92.124.194.86:8686/hubservice");
+service.CreateClaimForRefusalAsync (param0,param1,param2,param3,param4);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetPatientHistory">GetPatientHistory</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import ru.hardhill.hubservice;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+
+            
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService("http://92.124.194.86:8686/hubservice");
+String res = service.GetPatientHistory(param0,param1,param2,param3);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import ru.hardhill.hubservice;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://92.124.194.86:8686/hubservice");
+service.GetPatientHistoryAsync (param0,param1,param2,param3);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="UpdatePhoneByIdPat">UpdatePhoneByIdPat</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import ru.hardhill.hubservice;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+String param4 = ...;//initialization code
+String param5 = ...;//initialization code
+
+            
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService("http://92.124.194.86:8686/hubservice");
+String res = service.UpdatePhoneByIdPat(param0,param1,param2,param3,param4,param5);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import ru.hardhill.hubservice;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+String param4 = ...;//initialization code
+String param5 = ...;//initialization code
+
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://92.124.194.86:8686/hubservice");
+service.UpdatePhoneByIdPatAsync (param0,param1,param2,param3,param4,param5);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetHubUserByGuid">GetHubUserByGuid</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import ru.hardhill.hubservice;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+            
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService("http://92.124.194.86:8686/hubservice");
+String res = service.GetHubUserByGuid(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import ru.hardhill.hubservice;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://92.124.194.86:8686/hubservice");
+service.GetHubUserByGuidAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetErrorList">GetErrorList</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import ru.hardhill.hubservice;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+            
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService("http://92.124.194.86:8686/hubservice");
+String res = service.GetErrorList(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import ru.hardhill.hubservice;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://92.124.194.86:8686/hubservice");
+service.GetErrorListAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SetWaitingList">SetWaitingList</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import ru.hardhill.hubservice;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+String param4 = ...;//initialization code
+String param5 = ...;//initialization code
+String param6 = ...;//initialization code
+String param7 = ...;//initialization code
+String param8 = ...;//initialization code
+String param9 = ...;//initialization code
+String param10 = ...;//initialization code
+String param11 = ...;//initialization code
+String param12 = ...;//initialization code
+
+            
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService("http://92.124.194.86:8686/hubservice");
+String res = service.SetWaitingList(param0,param1,param2,param3,param4,param5,param6,param7,param8,param9,param10,param11,param12);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import ru.hardhill.hubservice;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+String param4 = ...;//initialization code
+String param5 = ...;//initialization code
+String param6 = ...;//initialization code
+String param7 = ...;//initialization code
+String param8 = ...;//initialization code
+String param9 = ...;//initialization code
+String param10 = ...;//initialization code
+String param11 = ...;//initialization code
+String param12 = ...;//initialization code
+
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://92.124.194.86:8686/hubservice");
+service.SetWaitingListAsync (param0,param1,param2,param3,param4,param5,param6,param7,param8,param9,param10,param11,param12);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetStatusAnalysis">GetStatusAnalysis</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import ru.hardhill.hubservice;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+            
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService("http://92.124.194.86:8686/hubservice");
+String res = service.GetStatusAnalysis(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import ru.hardhill.hubservice;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://92.124.194.86:8686/hubservice");
+service.GetStatusAnalysisAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SendNotificationAboutAppointment">SendNotificationAboutAppointment</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import ru.hardhill.hubservice;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+String param4 = ...;//initialization code
+String param5 = ...;//initialization code
+String param6 = ...;//initialization code
+String param7 = ...;//initialization code
+
+            
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService("http://92.124.194.86:8686/hubservice");
+String res = service.SendNotificationAboutAppointment(param0,param1,param2,param3,param4,param5,param6,param7);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import ru.hardhill.hubservice;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+String param4 = ...;//initialization code
+String param5 = ...;//initialization code
+String param6 = ...;//initialization code
+String param7 = ...;//initialization code
+
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://92.124.194.86:8686/hubservice");
+service.SendNotificationAboutAppointmentAsync (param0,param1,param2,param3,param4,param5,param6,param7);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SendNotificationAboutAppointmentStatus">SendNotificationAboutAppointmentStatus</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import ru.hardhill.hubservice;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+String param4 = ...;//initialization code
+String param5 = ...;//initialization code
+String param6 = ...;//initialization code
+String param7 = ...;//initialization code
+
+            
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService("http://92.124.194.86:8686/hubservice");
+String res = service.SendNotificationAboutAppointmentStatus(param0,param1,param2,param3,param4,param5,param6,param7);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import ru.hardhill.hubservice;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+String param4 = ...;//initialization code
+String param5 = ...;//initialization code
+String param6 = ...;//initialization code
+String param7 = ...;//initialization code
+
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://92.124.194.86:8686/hubservice");
+service.SendNotificationAboutAppointmentStatusAsync (param0,param1,param2,param3,param4,param5,param6,param7);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetTodayAppointments">GetTodayAppointments</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import ru.hardhill.hubservice;
+...
+
+String param0 = ...;//initialization code
+
+            
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService("http://92.124.194.86:8686/hubservice");
+String res = service.GetTodayAppointments(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import ru.hardhill.hubservice;
+...
+String param0 = ...;//initialization code
+
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://92.124.194.86:8686/hubservice");
+service.GetTodayAppointmentsAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="CheckIn">CheckIn</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import ru.hardhill.hubservice;
+...
+
+String param0 = ...;//initialization code
+
+            
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService("http://92.124.194.86:8686/hubservice");
+String res = service.CheckIn(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import ru.hardhill.hubservice;
+...
+String param0 = ...;//initialization code
+
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://92.124.194.86:8686/hubservice");
+service.CheckInAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetVersion">GetVersion</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import ru.hardhill.hubservice;
+...
+
+
+            
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService("http://92.124.194.86:8686/hubservice");
+String res = service.GetVersion();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import ru.hardhill.hubservice;
+...
+
+CFTBasicHttpBinding_IHubService service = new CFTBasicHttpBinding_IHubService(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://92.124.194.86:8686/hubservice");
+service.GetVersionAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+</body>
+</html>
+
