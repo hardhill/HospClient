@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 patient.Surname = SURENAME;
                 patient.Birthday = MyUtil.String2Date(BIRTHDAY);
 
-                GetCheckPatient(patient,IDLPU,GUID,1);
+                GetCheckPatient(patient, IDLPU, GUID, 0);
             }
         });
     }
@@ -104,54 +104,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    //-----------------------------------------------------------------------------------------
-    private final SoapSerializationEnvelope getSoapSerializationEnvelope(SoapObject request) {
-        SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
-        envelope.dotNet = true;
-        envelope.implicitTypes = true;
-        envelope.setAddAdornments(false);
-        envelope.setOutputSoapObject(request);
-        return envelope;
-    }
 
-    private final HttpTransportSE getHttpTransportSE() {
-        HttpTransportSE ht = new HttpTransportSE(MAIN_REQUEST_URL);
-        ht.debug = true;
-        ht.setXmlVersionTag("<!--?xml version=\"1.0\" encoding= \"UTF-8\" ?-->");
-        return ht;
-    }
-
-    private final void GetResultCheckPatient(final Patient patient) {
-        new Thread(new Runnable() {
-
-            @Override
-            public void run() {
-                response = CheckPatient(patient);
-                handler.sendEmptyMessage(0);
-            }
-        }).start();
-    }
-
-    private String CheckPatient(Patient patient) {
-        String result = "";
-        String methodname = METHOD_NAME;
-        SoapObject request = new SoapObject(TEMPURI, methodname);
-        request.addProperty("Name", patient.Name);
-
-        SoapSerializationEnvelope envelope = getSoapSerializationEnvelope(request);
-
-        HttpTransportSE ht = getHttpTransportSE();
-        try {
-          ht.call(SOAP_ACTION, envelope);
-          SoapPrimitive resultsString = (SoapPrimitive)envelope.getResponse();
-          result = resultsString.toString();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (XmlPullParserException e) {
-            e.printStackTrace();
-        }
-        return result;
-    }
 
 
 
