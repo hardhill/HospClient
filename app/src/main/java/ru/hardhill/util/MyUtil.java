@@ -12,11 +12,11 @@ import java.util.TimeZone;
 public class MyUtil {
         public static Date String2Date(String str){
         Date result = null;
-            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
             String dateInString = str;
             try {
 
-                Date date = formatter.parse(dateInString.replaceAll("Z$", "+0000"));
+                Date date = formatter.parse(dateInString);
                 result = date;
             } catch (ParseException e) {
                 e.printStackTrace();

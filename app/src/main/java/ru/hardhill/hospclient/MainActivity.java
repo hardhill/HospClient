@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.SoapObject;
@@ -28,7 +31,7 @@ import ru.hardhill.util.MyUtil;
 public class MainActivity extends AppCompatActivity {
     final static String USERNAME = "мунко";
     final static String SURENAME = "раднаев";
-    final static String BIRTHDAY = "1986-10-15T00:00:00";
+    final static String BIRTHDAY = "1986-10-15";
     final static String GUID = "59432A7C-1907-47EC-A721-5B6C3FFBF47B";
     final static int IDLPU = 2301001;
     final static  String URI = "http://92.124.194.86:8686/hubservice";
@@ -36,38 +39,12 @@ public class MainActivity extends AppCompatActivity {
     private static final String SOAP_ACTION = "http://tempuri.org/IHubService/CheckPatient";
     private static final String METHOD_NAME = "CheckPatient";
     private static final String MAIN_REQUEST_URL = "http://92.124.194.86:8686/hubservice";
-    private String response;
-
-
-
-    EditText edtResult;
+    EditText edtSurename, edtName, edtBirthdate;
     Button bLogin;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        edtResult = (EditText)findViewById(R.id.editText);
-        bLogin = (Button)findViewById(R.id.button);
-
-        String methodname = "CheckPatient";
-        SoapObject request = new SoapObject(TEMPURI, methodname);
-
-
-        bLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                CFTPatient patient = new CFTPatient();
-                patient.Name = USERNAME;
-                patient.Surname = SURENAME;
-                patient.Birthday = MyUtil.String2Date(BIRTHDAY);
-
-                GetCheckPatient(patient, IDLPU, GUID, 0);
-            }
-        });
-    }
-
-
+    TextView lblUserInfo;
+    RelativeLayout pnlLogin;
+    LinearLayout pnlInfouser;
+    private String response;
     // === перехватывает сообщения от другого процесса
     public Handler handler = new Handler(new Handler.Callback() {
 
@@ -76,12 +53,47 @@ public class MainActivity extends AppCompatActivity {
             switch (msg.what) {
 
                 case 0:
-                    edtResult.setText(response);
+                    lblUserInfo.setText(response);
                     break;
             }
             return false;
         }
     });
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        edtSurename = (EditText) findViewById(R.id.edtSurename);
+        edtName = (EditText) findViewById(R.id.edtName);
+        edtBirthdate = (EditText) findViewById(R.id.edtBirthdate);
+        lblUserInfo = (TextView) findViewById(R.id.lblUserInfo);
+
+        pnlInfouser = (LinearLayout) findViewById(R.id.pnlInfouser);
+        pnlLogin = (RelativeLayout) findViewById(R.id.pnlLogin);
+
+        bLogin = (Button) findViewById(R.id.bLogin);
+
+        pnlLogin.setVisibility(View.VISIBLE);
+
+        // настройка окна авторизации
+        edtSurename.setText(SURENAME);
+        edtName.setText(USERNAME);
+        edtBirthdate.setText(BIRTHDAY);
+
+        bLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CFTPatient patient = new CFTPatient();
+                patient.Name = USERNAME;
+                patient.Surname = SURENAME;
+                patient.Birthday = MyUtil.String2Date(BIRTHDAY);
+                pnlLogin.setVisibility(View.GONE);
+                pnlInfouser.setVisibility(View.VISIBLE);
+                //GetCheckPatient(patient, IDLPU, GUID, 0);
+            }
+        });
+    }
 
     private final void GetCheckPatient(final CFTPatient patient,final int idLPU,final String guid,final int idHistory) {
         new Thread(new Runnable() {
@@ -94,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
 
                 try {
                    checkPatientResult = client.CheckPatient(patient,idLPU,guid,idHistory);
-                   response = String.format("Идентификатор пациента: %s, Номер истории болезни: %d",checkPatientResult.IdPat,checkPatientResult.IdHistory);
+                    response = String.format("Id пациента: %s", checkPatientResult.IdPat);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
