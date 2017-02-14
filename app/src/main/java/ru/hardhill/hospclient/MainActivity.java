@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     Button bLogin;
     TextView lblUserInfo;
     RelativeLayout pnlLogin;
-    LinearLayout pnlInfouser;
+    LinearLayout pnlInfouser, pnlMain;
     private String response;
 
 
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             switch (msg.what) {
 
                 case 0:
-                    pnlInfouser.setVisibility(View.VISIBLE);
+                    pnlMain.setVisibility(View.VISIBLE);
                     lblUserInfo.setText(response);
                     pnlLogin.setVisibility(View.GONE);
                     break;
@@ -73,11 +73,13 @@ public class MainActivity extends AppCompatActivity {
         edtBirthdate = (EditText) findViewById(R.id.edtBirthdate);
         lblUserInfo = (TextView) findViewById(R.id.lblUserInfo);
 
+        pnlMain = (LinearLayout) findViewById(R.id.pnlMain);
         pnlInfouser = (LinearLayout) findViewById(R.id.pnlInfouser);
         pnlLogin = (RelativeLayout) findViewById(R.id.pnlLogin);
 
         bLogin = (Button) findViewById(R.id.bLogin);
 
+        pnlMain.setVisibility(View.GONE);
         pnlLogin.setVisibility(View.VISIBLE);
 
         // настройка окна авторизации
