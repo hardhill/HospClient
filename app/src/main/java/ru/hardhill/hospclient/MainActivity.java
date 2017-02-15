@@ -16,8 +16,10 @@ import android.widget.TextView;
 
 
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 import ru.hardhill.hubservice.CFTArrayOfSpesiality;
 import ru.hardhill.hubservice.CFTBasicHttpBinding_IHubService;
@@ -35,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String METHOD_NAME = "CheckPatient";
     private static final String MAIN_REQUEST_URL = "http://92.124.194.86:8686/hubservice";
 
-    ExecutorService executor;
+    ExecutorService executor1, executor2;
     CFTBasicHttpBinding_IHubService client;
     Patient mainPatient;
 
@@ -44,40 +46,12 @@ public class MainActivity extends AppCompatActivity {
     TextView lblUserInfo;
     CheckBox chbRemember;
     RelativeLayout pnlLogin;
-    // === перехватывает сообщения от другого процесса
-    public Handler handler = new Handler(new Handler.Callback() {
 
-        @Override
-        public boolean handleMessage(Message msg) {
-            switch (msg.what) {
-
-                case 0:
-                    pnlMain.setVisibility(View.VISIBLE);
-                    lblUserInfo.setText(mainPatient.Information);
-                    pnlLogin.setVisibility(View.GONE);
-                    break;
-                case 1:
-
-                    break;
-            }
-            return false;
-        }
-    });
     LinearLayout pnlInfouser, pnlMain;
     ListView lstSpecialist;
     ListSpecialistAdapter listSpecialistAdapter;
 
-    // TODO: 15.02.2017 это временная функция
-    private void TT() {
-        if (mainPatient.StatusOK) {
-            //заполняем данные о мед.специалистах приписаных к пациенту
-            mainPatient.ListSpecialist.clear(); //почистим
 
-            RequestListSpecialist(mainPatient.LPUID, mainPatient.idPat, mainPatient.GUI, mainPatient.idHistory);
-
-            Log.i("MAIN", mainPatient.Information);
-        }
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,14 +82,15 @@ public class MainActivity extends AppCompatActivity {
 // загрузить данные пациента из файла
         mainPatient.LoadProperty();
 //создаем сервис-исполнитель потока
-        executor = Executors.newFixedThreadPool(1);
+        executor1 = Executors.newSingleThreadExecutor();
+        executor2 = Executors.newSingleThreadExecutor();
 
         //создаем адаптер данных для
         listSpecialistAdapter = new ListSpecialistAdapter();
         //подцепляем адаптер к списку
         lstSpecialist.setAdapter(listSpecialistAdapter);
 
-
+// обработка события нажатия кнопки ==============================================================
         bLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -132,12 +107,19 @@ public class MainActivity extends AppCompatActivity {
                 // TODO: 15.02.2017 IDLPU временно берется из констант
                 Log.d("MAIN", "======Request Patient ==========");
                 GetCheckPatient(patient, mainPatient.LPUID, mainPatient.GUI, mainPatient.idHistory);
-                // искусственно ожидаем статуса выполнения задачи
-                do {
-                    Log.d("MAIN", "----------Requesting Specialist---------");
-                } while (!handler.hasMessages(0));
-                TT();
-                Log.d("MAIN", "----------Specialist List---------");
+
+                pnlMain.setVisibility(View.VISIBLE);
+                lblUserInfo.setText(mainPatient.Information);
+                pnlLogin.setVisibility(View.GONE);
+                if (mainPatient.StatusOK) {
+                    //заполняем данные о мед.специалистах приписаных к пациенту
+                    mainPatient.ListSpecialist.clear(); //почистим
+
+                    RequestListSpecialist(mainPatient.LPUID, mainPatient.idPat, mainPatient.GUI, mainPatient.idHistory);
+
+                    Log.d("MAIN", mainPatient.Information);
+                }
+
 
             }
         });
@@ -160,9 +142,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void GetCheckPatient(final CFTPatient patient, final int idLPU, final String guid, final int idHistory) {
-        new Thread(new Runnable() {
 
-            @Override
+        Future future = executor1.submit(new Runnable() {
             public void run() {
                 CFTCheckPatientResult checkPatientResult = new CFTCheckPatientResult();
                 try {
@@ -173,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
                     mainPatient.StatusOK = checkPatientResult.Success;
                     if (checkPatientResult.Success) {
                         mainPatient.Information = String.format("%s %s Id: %s", mainPatient.Surename, mainPatient.Name, checkPatientResult.IdPat);
+                        Log.d("MAIN", "----------Requesting Patient---------");
                     } else {
                         mainPatient.Information = "Ошибка авторизации пациента";
                     }
@@ -180,19 +162,26 @@ public class MainActivity extends AppCompatActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                handler.sendEmptyMessage(0);
+                //handler.sendEmptyMessage(0);
             }
-        }).start();
+        });
+        try {
+
+            future.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
     }
 
     private void RequestListSpecialist(final int lpuid, final String idPat, final String gui, final int idHistory) {
-        new Thread(new Runnable() {
-            @Override
+        Future future = executor2.submit(new Runnable() {
+
             public void run() {
                 CFTGetSpesialityListResult cftGetSpesialityListResult = new CFTGetSpesialityListResult();
                 try {
                     cftGetSpesialityListResult = client.GetSpesialityList(lpuid, idPat, gui, idHistory);
-
                     mainPatient.StatusOK = cftGetSpesialityListResult.Success;
                     mainPatient.idHistory = cftGetSpesialityListResult.IdHistory;
                     if (mainPatient.StatusOK) {
@@ -210,14 +199,22 @@ public class MainActivity extends AppCompatActivity {
                             specialist.setNearestDate(cftSpesialities.elementAt(i).NearestDate);
                             mainPatient.ListSpecialist.add(specialist);
                         }
-
+                        mainPatient.Information = String.format("всего выбрано: %d", mainPatient.ListSpecialist.size());
+                        Log.d("MAIN", "----------Specialist List---------");
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                handler.sendEmptyMessage(1);
             }
-        }).start();
+        });
+        try {
+            future.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
     }
 
 

@@ -16,7 +16,7 @@ import ru.hardhill.util.MyUtil;
 public class Patient {
     public static final String APP_PREFERENCES = "personsettings";
     final static String GUID = "59432A7C-1907-47EC-A721-5B6C3FFBF47B";
-    final static int IDLPU = 2301001;
+    final static int IDLPU = 32009;
     public String Name;
     public String Surename;
     public String GUI;
